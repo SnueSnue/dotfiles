@@ -30,6 +30,9 @@ Plug 'rust-lang/rust.vim'
 " Syntax for kitty config file
 Plug 'fladson/vim-kitty'
 
+" Vim wiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " NERDTree
@@ -50,10 +53,11 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nmap ya :%y+<CR>
 
 " keymap for toggling cursorline and cursor collumn
-nnoremap t :set cursorline!<CR>:set cursorcolumn!<CR>
+nmap t :set cursorline!<CR>:set cursorcolumn!<CR>
 
+" to be removed - is now in ftplugin/tex.vim
 " keymap for saving and updating latex pdf
-nnoremap mm :w <CR>:!latexmk<CR>
+" nmap mm :w <CR>:!latexmk<CR>
 
 " general vim settings
 
