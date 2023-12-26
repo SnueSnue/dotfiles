@@ -32,8 +32,17 @@ Plug 'fladson/vim-kitty'
 
 " Vim wiki
 Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{
+            \ 'path': '~/vimwiki/',
+            \ 'path_html': '~/vimwiki/html',
+            \ 'custom_wiki2html': '~/vimwiki/convert.py',
+            \ 'syntax': 'markdown',
+            \ 'ext': 'md'
+            \ }]
+let g:vimwiki_global_ext = 0
 
 call plug#end()
+
 
 " NERDTree
 
