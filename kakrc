@@ -43,4 +43,20 @@ hook global InsertCompletionHide .* %{
 
 # Copy to and paste from system clipboard
 map -docstring "Copy to system clipboard" global user y "<a-|> xclip -selection clipboard<ret>"
-map -docstring "Paste from system clipboard" global user p "<a-|> xclip -o -selection clipboard<ret>"
+map -docstring "Paste from system clipboard" global user p "<a-!> xclip -o -selection clipboard<ret>"
+
+# remap b to q, so it is together with w and e
+map global normal q b
+map global normal Q B
+map global normal <a-q> <a-b>
+map global normal <a-Q> <a-B>
+
+# unselect on <esc>
+map global normal <esc> ";,"
+
+# Comment lines
+map global normal <c-v> ":comment-line<ret>"
+
+map -docstring "Close current buffer" global user b ": db<ret>"
+map -docstring "goto previous buffer" global user n ": bp<ret>"
+map -docstring "goto next buffer" global user m ": bn<ret>"
