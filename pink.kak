@@ -79,3 +79,49 @@ set-face global MatchingChar "%opt{blue},%opt{dark_pink}"
 set-face global Whitespace "%opt{dimgray},%opt{dark_pink}+f"
 set-face global WrapMarker Whitespace
 set-face global BufferPadding "%opt{gray},%opt{dark_pink}"
+
+# Powerline colors
+hook global ModuleLoaded powerline %{ require-module powerline_pink }
+
+provide-module powerline_pink %§
+set-option -add global powerline_themes "pink"
+
+define-command -hidden powerline-theme-pink %{
+    # Bufname foreground
+    declare-option -hidden str powerline_color00 %opt{light_pink}
+    # Bufname background
+    declare-option -hidden str powerline_color03 %opt{dark_pink}
+    # client foreground
+    declare-option -hidden str powerline_color13 %opt{light_pink}
+    # client background
+    declare-option -hidden str powerline_color12 %opt{dark_pink}
+    # filetype foreground
+    declare-option -hidden str powerline_color10 %opt{light_pink}
+    # filetype background
+    declare-option -hidden str powerline_color11 %opt{dark_pink}
+    # git foreground
+    declare-option -hidden str powerline_color02 %opt{light_pink}
+    # git background
+    declare-option -hidden str powerline_color04 %opt{dark_pink}
+    # line-column & lsp foreground
+    declare-option -hidden str powerline_color06 %opt{light_pink}
+    # line-column & lsp background
+    declare-option -hidden str powerline_color09 %opt{dark_pink}
+    # mode-info foreground
+    declare-option -hidden str powerline_color07 %opt{light_pink}
+    # mode-info background
+    declare-option -hidden str powerline_color08 %opt{dark_pink}
+    # position foreground
+    declare-option -hidden str powerline_color05 %opt{light_pink}
+    # position background
+    declare-option -hidden str powerline_color01 %opt{dark_pink}
+    # session foreground
+    declare-option -hidden str powerline_color15 %opt{light_pink}
+    # session background
+    declare-option -hidden str powerline_color14 %opt{dark_pink}
+
+    declare-option -hiden str powerline_next_bg %opt{powerline_color08}
+    declare-option -hiden str powerline_base-bg %opt{powerline_color08}
+}
+
+§

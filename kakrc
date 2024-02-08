@@ -34,7 +34,7 @@ plug "andreyorst/kaktree" config %{
 }
 
 ## Allow following links in md files
-plug "TeddyDD/kakoune-wiki"
+plug "SnueSnue/kakoune-wiki"
 
 ## Fuzzy finding in kak
 plug "andreyorst/fzf.kak" %{
@@ -50,11 +50,13 @@ plug "andreyorst/fzf.kak" %{
 }
 
 ## More information in information line on bottom of screen
-plug "andreyorst/powerline.kak" defer poweline %{
-    powerline-format global "git lsp bufname filetype mode_info lsp line_column position"
-    set-option global powerline_seperator_thin ""
-    set-option global powerline_seperator ""
-} config %{
+plug "andreyorst/powerline.kak" defer powerline %{
+    powerline-format global "git bufname filetype mode_info line_column position"
+    set-option global powerline_separator_thin ""
+    set-option global powerline_separator ""
+} defer powerline_pink %{
+    powerline-theme pink
+    }config %{
     powerline-start
 }
 
@@ -88,7 +90,7 @@ hook global WinCreate .*\.md %{
         }
 }
 
-# Allow autocomplete with tab
+# Cycle autocomplete with tab
 hook global InsertCompletionShow .* %{
     try %{
         exec -draft 'h<a-K>\h<ret>'
@@ -138,3 +140,6 @@ map -docstring "open lsp" global user l ": enter-user-mode lsp<ret>"
 
 ## Kaktree
 map -docstring "toggle kaktree" global user t ": kaktree-toggle<ret>"
+
+## Open selected link in firefox
+map -docstring "open link in firefox" global user o "!xargs -i{} firefox {}<ret>"
