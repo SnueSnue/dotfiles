@@ -1,7 +1,3 @@
----
-title: README dotfiles
----
-
 # My dotfiles
 
 these are just a collection of my dotfiles, for
