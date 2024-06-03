@@ -143,3 +143,12 @@ map -docstring "toggle kaktree" global user t ": kaktree-toggle<ret>"
 
 ## Open selected link in firefox
 map -docstring "open link in firefox" global user o "!xargs -i{} firefox {}<ret>"
+
+# My commands
+
+## Export to ...
+
+define-command export-to-pdf %{ evaluate-commands %sh{
+    pandoc -s -N --template=/home/snue/misc/templates/template.tex $kak_buffile -o $(dirname $kak_buffile)/$(basename $kak_buffile .md).pdf
+    # printf "pandoc -s -N --template=/home/snue/misc/kak_templates/template.tex $kak_buffile -o $(dirname $kak_buffile")}
+}

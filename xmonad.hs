@@ -6,6 +6,7 @@ import System.Exit
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
+import XMonad.Config
 import XMonad.Layout.MultiColumns
 
 import qualified XMonad.StackSet as W
@@ -115,7 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
 
     -- Swap the focused window with the previous window
-    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    ))
+    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
@@ -202,7 +203,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (Mirror (multiCol [1] 2 0.01 (-0.25)) ||| tiled ||| Mirror tiled ||| Full)
+-- myLayout = avoidStruts (Mirror (multiCol [1] 2 0.01 (-0.25)) ||| tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts (multiCol [1] 2 0.01 (1/2) ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
@@ -297,7 +299,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
