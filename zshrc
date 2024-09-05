@@ -2,7 +2,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
-unsetopt beep
+unsetopt BEEP
 bindkey -v
 
 zstyle :compinstall filename '/home/snue/.zshrc'
@@ -26,3 +26,4 @@ eval "$(zoxide init --cmd cd --hook pwd zsh)"
 [ -f "/home/snue/.ghcup/env" ] && source "/home/snue/.ghcup/env" # ghcup-env
 
 alias sdu='source /home/snue/code/navigator/navigator.sh /home/snue/sdu/overblik'
+alias temp='kak ~/misc/temp_file'

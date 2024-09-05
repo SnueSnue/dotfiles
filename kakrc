@@ -150,6 +150,7 @@ map -docstring "open link in firefox" global user o "!xargs -i{} firefox {}<ret>
 
 define-command export-md-to-pdf %{ evaluate-commands %sh{
     pandoc -s -N --template=/home/snue/misc/templates/template.tex $kak_buffile -o $(dirname $kak_buffile)/$(basename $kak_buffile .md).pdf
+    printf "echo exported to $(dirname kak_buffile)/$(basename $kak_buffile .md).pdf"
     # printf "pandoc -s -N --template=/home/snue/misc/kak_templates/template.tex $kak_buffile -o $(dirname $kak_buffile")}
 }
 
