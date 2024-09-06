@@ -144,6 +144,9 @@ map -docstring "toggle kaktree" global user t ": kaktree-toggle<ret>"
 ## Open selected link in firefox
 map -docstring "open link in firefox" global user o "!xargs -i{} firefox {}<ret>"
 
+## markdown checklist
+map -docstring "toggle markdown checkbox" global user x ": wiki_toggle_checkbox<ret>"
+
 # My commands
 
 ## Export to ...

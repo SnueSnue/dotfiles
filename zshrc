@@ -2,7 +2,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
-unsetopt BEEP
+unsetopt beep
 bindkey -v
 
 zstyle :compinstall filename '/home/snue/.zshrc'
